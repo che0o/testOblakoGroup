@@ -1,0 +1,22 @@
+<div class="event-participants">
+  <h3 class="h3 event-participants__title">Участники мероприятия</h3>
+  <form class="event-participants__checkboxes">
+    <label class="checkbox checkbox__first">
+      Все пользователи
+      <input type="checkbox" name="checkbox" class="checkbox__input">
+      <span class="checkbox__checkmark"></span>
+    </label>
+    <label class="checkbox" *ngFor="let user of users">
+      {{user.name}}
+      <input type="checkbox" name="checkbox" class="checkbox__input">
+      <span class="checkbox__checkmark"></span>
+      <button class="btn-reset checkbox__btn">
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z"
+            fill="black" fill-opacity="0.54" />
+        </svg>
+      </button>
+    </label>
+  </form>
+</div>

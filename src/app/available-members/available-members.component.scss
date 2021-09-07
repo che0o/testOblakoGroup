@@ -1,0 +1,88 @@
+@import "../../scss/breakpoints";
+@import "src/scss/checkbox";
+
+.available-members {
+  padding-top: 20px;
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__form {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    row-gap: 34px;
+    column-gap: 26px;
+  }
+
+  &__label {
+    width: 45%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 7px 10px 6px 34px;
+    border-bottom: 1px solid var(--primary-lines-gray);
+    background: url("../../assets/icons/search.svg") no-repeat left center;
+    transition: border-bottom-color 0.3s;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--light-theme);
+    }
+
+    &:hover {
+      border-color: var(--light-theme);
+    }
+
+    &:focus {
+      border-color: var(--primary-blue);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    margin-top: -14px;
+  }
+
+  &__count {
+    white-space: nowrap;
+    margin-right: 33px;
+
+    @include desktop-last {
+      margin-right: 5%;
+    }
+  }
+
+  &__filter {
+    span {
+      pointer-events: none;
+      @include desktop-last {
+        display: none;
+      }
+    }
+
+    @include desktop-last {
+      margin-right: 5%;
+    }
+  }
+
+  &__checkboxes {
+    margin-top: 25px;
+  }
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8px;
+}

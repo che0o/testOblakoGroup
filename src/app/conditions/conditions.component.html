@@ -1,0 +1,10 @@
+<div class="conditions">
+  <h3 class="h3 conditions__title">Условия записи по коду</h3>
+  <form [formGroup]="form" class="conditions__radio radio">
+    <label class="radio__label" *ngFor="let item of conditions">
+      {{item}}
+      <input type="radio" class="radio__input" name="conditions" formControlName="conditions" value="{{item}}" >
+      <span class="radio__checkmark"></span>
+    </label>
+  </form>
+</div>

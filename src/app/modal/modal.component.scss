@@ -1,0 +1,85 @@
+@import "../../scss/breakpoints";
+
+.modal {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--primary-lines-gray);
+  left: 33%;
+  width: calc(67% - ((100vw - 1280px) / 2));
+  right: calc((100vw - 1280px) / 2);
+  animation: slidein 0.5s;
+
+  &__container {
+    position: relative;
+    overflow-y: auto;
+    height: 100%;
+    background-color: var(--primary-white);
+    padding: 43px 14px 24px 24px;
+  }
+
+  &__background {
+    z-index: 900;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--primary-white);
+    opacity: 0.95;
+  }
+
+  &__title {
+    margin: 0 0 23px;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--primary-black);
+  }
+
+  &__btn {
+    position: absolute;
+    top: 42px;
+
+    &--ok {
+      right: 52px;
+    }
+
+    &--x {
+      right: 14px;
+    }
+  }
+
+  @include desktop-mid {
+    right: 0;
+  }
+
+  @include desktop {
+    left: 8%;
+    width: 92%;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 33%;
+    width: calc(67% - ((100vw - 1280px) / 2));
+  }
+}
+
+@include desktop {
+  @keyframes slidein {
+    0% {
+      left: 100%;
+    }
+
+    100% {
+      left: 8%;
+      width: 92%;
+    }
+  }
+}

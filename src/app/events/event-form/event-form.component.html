@@ -1,0 +1,38 @@
+<form class="event-form">
+  <label class="event-form__label event-form__label--date"
+         [ngClass]="{'event-form__label--date--selected': isDateSelected}">
+    <span [ngClass]="{'event-form__text--visible': isDateSelected}" class="event-form__text">Дата</span>
+    <dp-date-picker
+      (focusin)="focusIn($event)"
+      (focusout)="focusOut($event)"
+      placeholder="Дата"
+      [config]="dateConfig"
+      mode="day"
+      theme="dp-material"
+      [(ngModel)]="selectedDate"
+      (onSelect)="isDateSelected = true"
+      [ngModelOptions]="{standalone: true}"
+    ></dp-date-picker>
+  </label>
+  <label class="event-form__label event-form__label--time"
+         [ngClass]="{'event-form__label--time--selected': isTimeSelected}">
+    <span [ngClass]="{'event-form__text--visible': isTimeSelected}" class="event-form__text">Время</span>
+    <dp-date-picker
+      (focusin)="focusIn($event)"
+      (focusout)="focusOut($event)"
+      placeholder="Время"
+      [config]="timeConfig"
+      mode="time"
+      theme="dp-material"
+      (onSelect)="isTimeSelected = true"
+    ></dp-date-picker>
+  </label>
+  <label class="event-form__label event-form__label--trainer"
+         [ngClass]="{'event-form__label--trainer--selected': isTrainerSelected}">
+    <span [ngClass]="{'event-form__text--visible': isTrainerSelected}" class="event-form__text">Тренер</span>
+    <ng-select (focus)="focusIn($event)" (blur)="focusOut($event)" class="event-form__select event-form__input" [placeholder]="placeholder"
+               (change)="isTrainerSelected = true">
+      <ng-option *ngFor="let item of trainersOptions" [value]="item.id">{{item.name}}</ng-option>
+    </ng-select>
+  </label>
+</form>

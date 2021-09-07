@@ -1,0 +1,111 @@
+@import "~normalize.css";
+@import "fonts";
+@import "variables";
+@import "ng-select";
+@import "breakpoints";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  background-color: var(--primary-white);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding-left: 67px;
+  padding-right: 67px;
+
+  @include desktop-last {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.btn-reset {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--light-theme-secondary);
+  cursor: pointer;
+
+  &--focused {
+    color: var(--primary-blue);
+    transition: color 0.3s;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-black);
+}
+
+.dp-picker-input .ng-pristine .ng-valid .ng-touched {
+  color: red !important;
+}
+
+.w50 {
+  width: 50%;
+
+  @include tablet {
+    width: 100%;
+  }
+}

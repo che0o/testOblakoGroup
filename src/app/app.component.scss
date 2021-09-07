@@ -1,0 +1,15 @@
+@import "../scss/breakpoints";
+
+.title {
+  margin: 20px 0 28px 2px;
+  padding-left: 46px;
+  font-weight: 700;
+  font-size: 38px;
+  color: var(--primary-black);
+  background: url("../assets/img/logo.svg") no-repeat left center;
+  background-size: 27px 29px;
+
+  @include tablet {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+<ul class="sessions-list">
+  <li class="sessions-list__item sessions-item sessions-item__head">
+    <span class="sessions-item__date">Дата начала</span>
+    <span class="sessions-item__title">Название</span>
+    <span class="sessions-item__participants">Участников</span>
+    <span class="sessions-item__trainer">Тренер</span>
+    <span class="sessions-item__progress">Прогресс</span>
+    <span class="sessions-item__menu"></span>
+  </li>
+  <li class="sessions-list__item sessions-item" *ngFor="let item of sessions">
+    <span class="sessions-item__date">{{item.date}}</span>
+    <span class="sessions-item__title">{{item.title}}</span>
+    <span class="sessions-item__participants">{{item.participants}}</span>
+    <span class="sessions-item__trainer">{{item.trainer}}</span>
+    <span class="sessions-item__progress">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M1.73357 2.91153C0.855973 4.04045 0.333374 5.45903 0.333374 6.99967C0.333374 7.30734 0.354216 7.61014 0.394564 7.90674L2.02194 7.47068C2.00745 7.31563 2.00004 7.15851 2.00004 6.99967C2.00004 5.91977 2.3424 4.91982 2.92449 4.10245L1.73357 2.91153ZM2.9121 1.73304L4.10303 2.92397C4.70545 2.495 5.40704 2.19625 6.16671 2.0688V0.384583C4.94949 0.536367 3.83419 1.01629 2.9121 1.73304ZM6.16671 13.6148C3.73967 13.3121 1.71778 11.7048 0.824962 9.51687L2.4524 9.0808C3.13089 10.561 4.5108 11.6527 6.16671 11.9305V13.6148ZM7.83337 11.9305C10.1981 11.5338 12 9.47717 12 6.99967C12 4.52217 10.1981 2.46553 7.83337 2.0688V0.384583C11.122 0.794665 13.6667 3.59999 13.6667 6.99967C13.6667 10.3994 11.122 13.2047 7.83337 13.6148V11.9305Z"
+              fill="black" fill-opacity="0.54" />
+      </svg>
+
+      {{item.progress}}
+      %
+    </span>
+    <div class="sessions-item__menu">
+      <button class="btn-reset sessions-item__btn" (click)="showMenu($event)"></button>
+      <ul class="sessions-item__modal menu" style="display: none">
+        <li class="menu__item" (click)="hideMenu($event)">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.499 0.574864C10.0769 0.142176 9.38407 0.141183 8.96145 0.575545L1.31875 8.43054C1.21307 8.53916 1.14277 8.67724 1.11712 8.8266L0.42209 12.8729C0.380656 13.1142 0.459533 13.3604 0.633403 13.5327C0.807273 13.7049 1.05426 13.7815 1.29509 13.7379L5.23239 13.0239C5.38606 12.996 5.5272 12.9208 5.63611 12.8089L11.0796 7.21416C11.0814 7.21239 11.0831 7.21062 11.0848 7.20883L13.2788 4.95391C13.6899 4.53143 13.6899 3.85435 13.2788 3.43188L10.499 0.574864ZM10.5444 5.61327L11.9264 4.19289L9.73056 1.93605L8.34858 3.35643L10.5444 5.61327ZM7.30215 4.43192L2.55608 9.30983L2.08185 12.0707L4.72847 11.5908L9.498 6.68876L7.30215 4.43192Z" fill="black" fill-opacity="0.54"/>
+          </svg>
+          Редактировать
+        </li>
+        <li class="menu__item" (click)="hideMenu($event)">
+          <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 12.25C1.5 13.075 2.175 13.75 3 13.75H9C9.825 13.75 10.5 13.075 10.5 12.25V3.25H1.5V12.25ZM3 4.75H9V12.25H3V4.75ZM8.625 1L7.875 0.25H4.125L3.375 1H0.75V2.5H11.25V1H8.625Z" fill="black" fill-opacity="0.54"/>
+          </svg>
+          Удалить слот
+        </li>
+      </ul>
+    </div>
+  </li>
+</ul>

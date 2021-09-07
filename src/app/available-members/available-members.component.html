@@ -1,0 +1,41 @@
+<div class="available-members">
+  <h3 class="h3 available-members__title">Доступные участники</h3>
+  <form class="available-members__form">
+    <label for="available-search" class="available-members__label-input label-input available-members__label">
+      <input id="available-search" type="search" placeholder="Поиск" class="available-members__input">
+    </label>
+    <label class="available-members__label label">Группа
+      <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedGroup" [ngModelOptions]="{standalone: true}" class="available-members__select">
+        <ng-option *ngFor="let item of groupOptions" [value]="item.id">{{item.name}}</ng-option>
+      </ng-select>
+    </label>
+    <label class="available-members__label label">Должность
+      <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedPosition" [ngModelOptions]="{standalone: true}" class="available-members__select">
+        <ng-option *ngFor="let item of positionOptions" [value]="item.id">{{item.name}}</ng-option>
+      </ng-select>
+    </label>
+    <label class="available-members__label label">Стаж
+      <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedExperience" [ngModelOptions]="{standalone: true}"
+                 class="available-members__select">
+        <ng-option *ngFor="let item of experienceOptions" [value]="item.id">{{item.name}}</ng-option>
+      </ng-select>
+    </label>
+    <div class="available-members__bottom">
+      <app-counter class="available-members__count">42 пользователя</app-counter>
+      <app-filter class="available-members__filter" [options]="options"><span>Настроить</span></app-filter>
+      <app-reset class="available-members__reset"></app-reset>
+    </div>
+  </form>
+  <form class="available-members__checkboxes checkboxes">
+    <label class="checkbox checkbox__first">
+      Все пользователи
+      <input type="checkbox" name="checkbox" class="checkbox__input">
+      <span class="checkbox__checkmark"></span>
+    </label>
+    <label class="checkbox" *ngFor="let user of users">
+      {{user.name}}
+      <input type="checkbox" name="checkbox" class="checkbox__input">
+      <span class="checkbox__checkmark"></span>
+    </label>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+.reset {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 18px 20px;
+  color: var(--light-theme-secondary);
+  background-color: transparent;
+  border-radius: 24px;
+  transition: background-color 0.3s;
+
+  svg {
+    margin-right: 11px;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
+}

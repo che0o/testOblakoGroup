@@ -1,0 +1,10 @@
+.main-program {
+  padding-top: 17px;
+
+}
+
+::ng-deep .main-program .ng-arrow-wrapper {
+  width: 18px;
+  height: 12px;
+  background: url("../../assets/icons/arrow-light.svg") no-repeat center;
+}

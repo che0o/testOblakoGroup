@@ -1,0 +1,15 @@
+@import "src/scss/checkbox";
+
+.event-participants {
+  padding-top: 20px;
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    margin-left: -6px;
+  }
+}

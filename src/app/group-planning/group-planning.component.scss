@@ -1,0 +1,9 @@
+@import "../../scss/breakpoints";
+
+.group-planning {
+  padding-top: 41px;
+
+  @include tablet {
+    padding-top: 20px;
+  }
+}

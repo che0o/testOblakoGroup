@@ -1,0 +1,15 @@
+<form class="main-program">
+  <label class="main-program__label label">
+    Программа
+    <ng-select
+      (focus)="focus($event)" (blur)="blur($event)"
+      [(ngModel)]="selectedProgram"
+      [ngModelOptions]="{standalone: true}"
+      class="main-program__select"
+    >
+      <ng-option *ngFor="let item of programOptions" [value]="item.id">
+        {{item.name}}
+      </ng-option>
+    </ng-select>
+  </label>
+</form>

@@ -1,0 +1,12 @@
+@import "../../scss/breakpoints";
+
+.participants-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
+}

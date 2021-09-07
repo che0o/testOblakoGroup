@@ -1,0 +1,32 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--primary-lines-gray);
+
+  &__tab {
+    position: relative;
+    margin-right: 25px;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--light-theme-secondary);
+    cursor: pointer;
+
+    &--active {
+      color: var(--primary-black);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: -11px;
+        right: 0;
+        height: 2px;
+        background-color: var(--primary-blue);
+        border-radius: 2px;
+      }
+    }
+  }
+}

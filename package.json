@@ -1,5 +1,5 @@
 {
-  "name": "test-oblako-grooup",
+  "name": "planning",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -18,13 +18,22 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ng-select/ng-select": "^7.2.0",
+    "angular-calendar-scheduler": "^11.0.7",
+    "bootstrap": "^5.1.0",
+    "date-fns": "^2.23.0",
+    "form": "^0.2.4",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "ng2-date-picker": "^12.0.3",
+    "normalize.css": "^8.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.4",
-    "@angular/cli": "~12.2.4",
+    "@angular-devkit/build-angular": "~12.2.2",
+    "@angular/cli": "~12.2.2",
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",

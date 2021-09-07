@@ -1,0 +1,112 @@
+@import "../../../scss/breakpoints";
+
+.group-form {
+  padding-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  column-gap: 30px;
+
+  &__input {
+    max-width: 166px;
+    width: 100%;
+    padding: 7px 10px 6px 34px;
+    border-bottom: 1px solid var(--primary-lines-gray);
+    background: url("../../../assets/icons/search.svg") no-repeat left center;
+    transition: border-bottom-color 0.3s;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--light-theme);
+    }
+
+    &:hover {
+      border-color: var(--light-theme);
+    }
+
+    &:focus {
+      border-color: var(--primary-blue);
+    }
+
+    @include tablet {
+      max-width: 100%;
+      padding-right: 50px;
+    }
+  }
+
+  &__label {
+    max-width: 166px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__label-input {
+    @include tablet {
+      position: relative;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__label-sort {
+    display: none;
+
+    @include tablet {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &__bottom {
+    padding-top: 18px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__sessions-count {
+    margin-right: 74px;
+  }
+
+  &__filter {
+    margin-right: 2px;
+
+    &--mobile {
+      display: none;
+
+      @include tablet {
+        position: absolute;
+        right: -15px;
+        bottom: 50%;
+        transform: translateY(50%);
+        z-index: 10;
+        display: block;
+      }
+    }
+  }
+}
+
+::ng-deep .ng-clear {
+  display: none !important;
+  height: 0;
+  width: 0;
+}
+
+::ng-deep .ng-arrow-wrapper {
+  width: 18px;
+  height: 12px;
+  background: url("../../../assets/icons/arrow.svg") no-repeat center;
+}
+
+::ng-deep .ng-select-opened .ng-arrow-wrapper {
+  transform: rotate(180deg);
+}

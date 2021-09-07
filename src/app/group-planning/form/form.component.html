@@ -1,0 +1,31 @@
+<form class="group-form">
+  <label for="search" class="group-form__label-input">
+    <input id="search" type="search" placeholder="Поиск" class="group-form__input">
+    <app-filter class="group-form__filter--mobile" [options]="options"></app-filter>
+  </label>
+  <label class="group-form__label label">Программа
+    <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedProgram" [ngModelOptions]="{standalone: true}" class="group-form__select">
+      <ng-option *ngFor="let item of programOptions" [value]="item.id">{{item.name}}</ng-option>
+    </ng-select>
+  </label>
+  <label class="group-form__label label">Период
+    <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedPeriod" [ngModelOptions]="{standalone: true}" class="group-form__select">
+      <ng-option *ngFor="let item of periodOptions" [value]="item.id">{{item.name}}</ng-option>
+    </ng-select>
+  </label>
+  <label class="group-form__label label">Статус
+    <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedStatus" [ngModelOptions]="{standalone: true}" class="group-form__select">
+      <ng-option *ngFor="let item of statusOptions" [value]="item.id">{{item.name}}</ng-option>
+    </ng-select>
+  </label>
+  <div class="group-form__bottom">
+    <app-counter class="group-form__sessions-count">34 сессии</app-counter>
+    <app-filter class="group-form__filter" [options]="options">Настроить фильтр</app-filter>
+    <app-reset class="group-form__reset"></app-reset>
+  </div>
+  <label class="group-form__label group-form__label-sort label">Сортировка
+    <ng-select (focus)="focus($event)" (blur)="blur($event)" [(ngModel)]="selectedSort" [ngModelOptions]="{standalone: true}" class="group-form__select">
+      <ng-option *ngFor="let item of sortOptions" [value]="item.id">{{item.name}}</ng-option>
+    </ng-select>
+  </label>
+</form>
